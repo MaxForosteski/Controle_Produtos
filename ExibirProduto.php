@@ -45,17 +45,30 @@ include('ExcluirProduto.php');
                         <p>'.$row['NCM'].'</p>
                     </td>
                     <td>
-                        <a onClick=""><p>Editar</p></a>
+                        <a href="ExibirProduto.php?testeEditar=true&id='.$row['Codigo'] .'"><p>Editar</p></a>
                     </td>
                     <td>
-                        <a id ="excluir" onClick="<script>window.location.reload()</script>"href="ExibirProduto.php?teste=true&id='.$row['Codigo'] .'"><p>Excluir</p></a>
+                        <a id ="excluir" href="ExibirProduto.php?testeExclusao=true&id='.$row['Codigo'] .'"><p>Excluir</p></a>
                     </td>
                 </tr>';
-            if(isset($_GET['teste'])){
-                    ExcluirProduto($_GET['id']);
-            }
+            
+            
         }    
-        
+        if(isset($_GET['testeExclusao'])){
+                ExcluirProduto($_GET['id']);
+            }
+        if(isset($_GET['testeEditar'])){
+                echo '<form action="EditarProduto.php" method="post">
+                        <input type="hidden" name="codigo" value="'.$_GET['id'].'">
+                        <label for="nome">Descricao</label>
+                        <input type="text" name="desc" placeholder="Descricao">
+                        <br>
+                        <label for="NCM">NCM</label>
+                        <input type="number" name="NCM">
+                        <br>
+                        <input type="submit" name="Enviar">
+                    </form>';
+            }
         $mysqli->close();
         ?>
         

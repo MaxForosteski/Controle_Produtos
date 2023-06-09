@@ -4,13 +4,14 @@ function ExcluirProduto($id){
     $sql="DELETE FROM produtos WHERE codigo = $id";
 
     $resultado = $mysqli->query($sql);
+    header("Location:ExibirProduto.php");
     if($resultado == true){
         $linhas_afetadas = $mysqli->affected_rows;
         echo "Exclusao realizada com sucesso. $linhas_afetadas linhas foram afetadas.";
     }else{
         echo "Erro ao tentar realizar a Exclusao:".$mysqli->error;
     }
-    header("Location:ExibirProduto.php");
+    
     exit();
 } 
 ?>
