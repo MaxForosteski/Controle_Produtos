@@ -1,5 +1,6 @@
 <?php
-include("conexao.php");
+include('conexao.php');
+include('ExcluirProduto.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,12 +23,13 @@ include("conexao.php");
                 <p>NCM</p>
             </td>
             <td>
-                <p>Editar</p>
+                <p>Editar/</p>
             </td>
             <td>
                 <p>Excluir</p>
             </td>
         </tr>
+        
         <?php 
         $sql = "SELECT * FROM produtos"; 
         $resultado = $mysqli->query($sql);
@@ -40,16 +42,20 @@ include("conexao.php");
                         <p>'.$row['Descricao'].'</p>
                     </td>
                     <td>
-                        <p>'.$row['NCM']."</p>
+                        <p>'.$row['NCM'].'</p>
                     </td>
                     <td>
-                        <a href='EditarProduto.php.'><p>Editar</p></a>
+                        <a onClick=""><p>Editar</p></a>
                     </td>
                     <td>
-                        <a href='ExcluirProduto.php'><p>Excluir</p></a>
+                        <a id ="excluir" onClick="<script>window.location.reload()</script>"href="ExibirProduto.php?teste=true&id='.$row['Codigo'] .'"><p>Excluir</p></a>
                     </td>
-                </tr>";
+                </tr>';
+            if(isset($_GET['teste'])){
+                    ExcluirProduto($_GET['id']);
+            }
         }    
+        
         $mysqli->close();
         ?>
         
