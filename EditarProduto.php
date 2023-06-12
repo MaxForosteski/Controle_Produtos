@@ -1,5 +1,5 @@
 <?php
-    include('Funcoes/conexao.php');
+    include('conexao.php');
     $codigo = $_POST['codigo'];
     $desc = $_POST['desc'];
     $NCM = $_POST['NCM'];
@@ -8,7 +8,7 @@
 
     $resultado = $mysqli->query($sql); 
     if($resultado == true){
-        header("Location:\pw/ExibirProduto.php");
+        header("Location:ExibirProduto.php");
     }else{
         echo "Erro ao tentar realizar a Modificação:".$mysqli->error;
     }

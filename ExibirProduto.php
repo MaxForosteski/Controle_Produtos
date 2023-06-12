@@ -1,6 +1,6 @@
 <?php
-include('Funcoes/conexao.php');
-include('Funcoes/ExcluirProduto.php');
+include('conexao.php');
+include('ExcluirProduto.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,16 +8,16 @@ include('Funcoes/ExcluirProduto.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/ExibirProdutoStyle.css">
-    <link rel="stylesheet" href="Style/InserirProdutoStyle.css">
-    <link rel="stylesheet" href="Style/HeaderStyle.css">
+    <link rel="stylesheet" href="ExibirProdutoStyle.css">
+    <link rel="stylesheet" href="InserirProdutoStyle.css">
+    <link rel="stylesheet" href="HeaderStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>ExibirProduto</title>
 </head>
 <body>
         <header>
             <ul>
-                <li><img id="icone" src="Imagens/tabela_icone.png" alt="Icone de tabela">Controle de Produtos</li>
+                <li><img id="icone" src="tabela_icone.png" alt="Icone de tabela">Controle de Produtos</li>
                 <li><a href="ExibirProduto.php">Exibir Produtos</a></li>
                 <li><a href="InserirProduto.html">Inserir Produtos</a></li>
             </ul>
@@ -83,7 +83,7 @@ include('Funcoes/ExcluirProduto.php');
                     echo '
                         <div class="produto">
                             <h3>Editar</h3>
-                            <form action="Funcoes/EditarProduto.php" method="post">
+                            <form action="EditarProduto.php" method="post">
                                 <input type="hidden" name="codigo" value="'.$_GET['id'].'">
                                 <label for="nome">Descricao</label>
                                 <input type="text" name="desc" placeholder="Descricao do Produto" required>
