@@ -13,7 +13,7 @@ include('Funcoes/ExcluirProduto.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!---------------Importações css/bootstrap----------------->
+    <!---------------Importações CSS/Bootstrap----------------->
     <link rel="stylesheet" href="Style/ExibirProdutoStyle.css">
     <link rel="stylesheet" href="Style/InserirProdutoStyle.css">
     <link rel="stylesheet" href="Style/HeaderStyle.css">
@@ -64,7 +64,7 @@ include('Funcoes/ExcluirProduto.php');
                     <p>Excluir</p>
                 </th>
             </tr>
-            <!--Gerar as linahs para cada produtos-->
+            <!--Gerar as linhas para cada produtos-->
             <?php 
             $sql = "SELECT * FROM produtos"; #SQL de busca no database
             $resultado = $mysqli->query($sql);#execução do SQL
