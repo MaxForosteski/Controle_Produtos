@@ -1,15 +1,22 @@
 <?php
 function ExcluirProduto($id){
-    include('conexao.php');
-    $sql="DELETE FROM produtos WHERE codigo = $id";
+    #Funcao de Excluir registros do database
 
-    $resultado = $mysqli->query($sql);
-    if($resultado == true){
+    #se conecta com o banco
+    include('conexao.php');
+
+    $sql="DELETE FROM produtos WHERE codigo = $id"; #Codigo SQL que Deleta Registros
+
+    $resultado = $mysqli->query($sql); #Executa o Codigo SQL
+
+    if($resultado == true){     #Testa se o codigo foi executado corretamente
         header("Location:\pw/ExibirProduto.php");
-    }else{
+    }else{                      #Retorna erro caso falhar
         echo "Erro ao tentar realizar a Exclusao:".$mysqli->error;
     }
     
-    exit();
+    $mysqli->close(); #fecha a conexao com o database
+    
+    exit(); 
 } 
 ?>

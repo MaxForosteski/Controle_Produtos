@@ -1,3 +1,4 @@
+/*Estilo da tabela*/
 main table{   
     color:black
 }
@@ -5,7 +6,9 @@ main table{
 main table a{
    color:rgb(25, 0, 255);
 }
+/*----------------*/
 
+/*Mudanca de cor do botoes "editar" e "excluir"*/
 #editar:hover{
     text-decoration: none;
     color:rgb(0, 197, 82);
@@ -15,7 +18,9 @@ main table a{
     text-decoration: none;
     color:rgb(255, 0, 0);
 }
+/*--------------------------------------------*/
 
+/*estilo da tabela de edição de registro*/
 .produto {
     background-color: rgba(214, 214, 214, 0.699);
     margin:10px;
@@ -23,3 +28,4 @@ main table a{
     padding: 1%;
     box-shadow: 2px 2px 6px 2px rgb(27, 27, 27);
 }
+/*-------------------------------------*/

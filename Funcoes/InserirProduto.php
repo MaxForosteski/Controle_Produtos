@@ -1,18 +1,25 @@
 <?php
+
+#Funcao que insere registro no banco de dados
+
+#se conecta com o database
 include('conexao.php');
 
+#importa as informações do formulario externo
 $desc=$_POST['nome'];
 $NCM = $_POST['NCM'];
+#--------------------------------------------
 
-$sql = "INSERT INTO produtos (Descricao,NCM) VALUES ('$desc','$NCM')";
 
-$resultado = $mysqli->query($sql);
+$sql = "INSERT INTO produtos (Descricao,NCM) VALUES ('$desc','$NCM')";  #Codigo SQL para inserir registros no database
 
-if($resultado == true){
+$resultado = $mysqli->query($sql);      #Executa codigo SQL
+
+if($resultado == true){         #Testa se foi executado corretamente
     header("Location:\pw/ExibirProduto.php");
-}else{
+}else{                          #Retorna erro caso falhar
     echo "Erro ao tentar inserir o produto!";
 }
 
-$mysqli->close();
+$mysqli->close();#fecha a conexao com o database
 ?>
