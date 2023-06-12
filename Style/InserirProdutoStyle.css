@@ -1,0 +1,8 @@
+.form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.form input{
+    margin: 10px;
+}

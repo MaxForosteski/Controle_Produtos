@@ -1,0 +1,30 @@
+header{
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+header a{
+    color: inherit;
+    text-decoration: none;
+}
+
+header a:hover{
+    background-color: rgb(118, 142, 250);
+    color: black;
+}
+
+header ul{
+    list-style: none;
+    
+}
+
+header li{
+    display: inline;
+    margin: 15px;
+    padding: 5px;
+}
+
+#icone{
+    width: 4%;
+    height: 4%;
+}

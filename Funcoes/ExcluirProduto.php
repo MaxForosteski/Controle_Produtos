@@ -1,13 +1,11 @@
 <?php
 function ExcluirProduto($id){
-    include('conexao.php');
+    include('Funcoes/conexao.php');
     $sql="DELETE FROM produtos WHERE codigo = $id";
 
     $resultado = $mysqli->query($sql);
-    header("Location:ExibirProduto.php");
     if($resultado == true){
-        $linhas_afetadas = $mysqli->affected_rows;
-        echo "Exclusao realizada com sucesso. $linhas_afetadas linhas foram afetadas.";
+        header("Location:\pw/ExibirProduto.php");
     }else{
         echo "Erro ao tentar realizar a Exclusao:".$mysqli->error;
     }
