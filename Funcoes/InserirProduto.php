@@ -6,12 +6,13 @@
 include('conexao.php');
 
 #importa as informações do formulario externo
+$codigo = $_POST['codigo'];
 $desc=$_POST['nome'];
 $NCM = $_POST['NCM'];
 #--------------------------------------------
 
 
-$sql = "INSERT INTO produtos (Descricao,NCM) VALUES ('$desc','$NCM')";  #Codigo SQL para inserir registros no database
+$sql = "INSERT INTO produtos (Codigo,Descricao,NCM) VALUES ('$codigo','$desc','$NCM')";  #Codigo SQL para inserir registros no database
 
 $resultado = $mysqli->query($sql);      #Executa codigo SQL
 

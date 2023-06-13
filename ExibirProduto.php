@@ -95,7 +95,7 @@ include('Funcoes/ExcluirProduto.php');
             if(isset($_GET['testeEditar'])){#chama funcao editar e abre uma janela de edição
                     echo '
                         <div class="produto">
-                            <h3>Editar</h3>
+                            <h3>Editar - '.$_GET['id'].'</h3>
                             <form action="Funcoes/EditarProduto.php" method="post">
                                 <input type="hidden" name="codigo" value="'.$_GET['id'].'">
                                 <label for="nome">Descricao</label>
